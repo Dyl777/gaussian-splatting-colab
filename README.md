@@ -1,31 +1,35 @@
-🐣 Please follow me for new updates https://twitter.com/camenduru <br />
-🔥 Please join our discord server https://discord.gg/k5BwmmvJJU <br />
-🥳 Please join my patreon community https://patreon.com/camenduru <br />
+# Gaussian Splatting Colab
 
-## 🦒 Colab
+Train and view 3D Gaussian Splats from your own images or videos, entirely in Google Colab.
 
-| Colab | Info
+## Notebooks
+
+| Notebook | Description |
 | --- | --- |
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/camenduru/gaussian-splatting-colab/blob/main/gaussian_splatting_colab.ipynb) | gaussian_splatting_colab
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1YniEH63VfZPuRGTddviUvNH48cDaLqtg) | Clip Guided Gaussian Splatting Colab (thanks to [@aman_gif](https://twitter.com/aman_gif) ❤)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/camenduru/gaussian-splatting-colab/blob/main/gaussian_splatting_viewer_colab.ipynb) | gaussian_splatting_viewer_colab (thanks to [@antimatter15](https://twitter.com/antimatter15) ❤)
+| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Dyl777/gaussian-splatting-colab/blob/main/gaussian_splatting_colab.ipynb) | **gaussian_splatting_colab** — mount Google Drive, extract video frames, run COLMAP, train Gaussian Splatting, render output video |
+| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Dyl777/gaussian-splatting-colab/blob/main/gaussian_splatting_viewer_colab.ipynb) | **gaussian_splatting_viewer_colab** — serve your trained `point_cloud.ply` in an interactive WebGL viewer via a public Cloudflare tunnel |
 
-## Viewer Tutorial
-We can drag and drop our `point_cloud.ply` 🥳
+## Workflow
 
-## Main Repo
-https://github.com/graphdeco-inria/gaussian-splatting
+1. Put your images or videos in a Google Drive folder
+2. Run `gaussian_splatting_colab.ipynb` step by step — it handles frame extraction, COLMAP, and training
+3. Once training is done, run `gaussian_splatting_viewer_colab.ipynb` to view your scene in 3D in the browser
 
-## Page
-https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/
+## Input
 
-## Paper
-https://arxiv.org/abs/2308.04079
+- Images: `.jpg`, `.jpeg`, `.png`
+- Videos: `.mp4`, `.mov`, `.avi`, `.mkv`, `.webm`
 
-## Main Repo Viewer
-https://github.com/antimatter15/splat thanks to @antimatter15 ❤
+Update `DATASET_PATH` in Step 1 of the training notebook to point to your Drive folder.
 
 ## Output
-https://github.com/camenduru/gaussian-splatting-colab/assets/54370274/003ee472-6c1d-44e0-990a-6c795effe46f
 
-https://github.com/camenduru/gaussian-splatting-colab/assets/54370274/e6d1674f-1ba5-4f46-aa30-be6e54dea45e
+- Trained model: `/content/my_scene/output/point_cloud/iteration_30000/point_cloud.ply`
+- Rendered video: `/content/warehouse_render.mp4`
+- Optionally copied back to Google Drive in Step 7
+
+## References
+
+- Main repo: https://github.com/graphdeco-inria/gaussian-splatting
+- Paper: https://arxiv.org/abs/2308.04079
+- WebGL viewer: https://github.com/antimatter15/splat (thanks to [@antimatter15](https://twitter.com/antimatter15))
